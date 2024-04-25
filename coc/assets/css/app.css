@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Bree+Serif&family=Calistoga&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&family=Quicksand:wght@300..700&family=Readex+Pro&family=Roboto&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: inline;
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgb(255, 163, 71);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5em;
+    z-index: 101;
+
+    .logo-img {
+      & img {
+        width: 130px;
+        margin: auto;
+        border-radius: 5px;
+      }
+    }
+
+    .navigation {
+      display: flex;
+
+      & ul {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        gap: 1.5rem;
+
+        & li {
+          list-style-type: none;
+        }
+
+        & a {
+          text-decoration: none;
+          font-family: "Poppins", sans-serif;
+          color: #0e0d0d;
+          text-transform: uppercase;
+          position: relative;
+          font-weight: 600;
+        }
+
+        & a::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          background-color: currentColor;
+          left: 0;
+          bottom: -3px;
+          display: block;
+          transition: width 0.3s ease-in-out;
+        }
+
+        & a:hover::before {
+          width: 100%;
+        }
+
+        .active {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+main {
+  /* Halaman Index */
+  /* Jumbotron */
+  .jumbotron {
+    z-index: -1;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      width: 100%;
+      max-height: 350px;
+      opacity: 0.5;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .description {
+      position: absolute;
+
+      & h1 {
+        color: #222831;
+        font-size: calc(1.5rem + 0.5vw);
+        font-family: "Kanit", sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+  }
+
+  /* Article Intro */
+  .intro {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 8em 5em;
+
+    & img {
+      width: calc(100% - 20px);
+      border-radius: 5%;
+      max-width: calc(300px + 10px);
+      object-fit: cover;
+    }
+
+    .about {
+      & h1 {
+        font: calc(1.6rem + 0.4vw) "Kanit", sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: -5px;
+      }
+
+      & p {
+        font: calc(1rem + 0.2vw) "Kanit", sans-serif;
+        font-weight: 300;
+      }
+    }
+  }
+
+  /* Article Alur Permainan */
+  .alur-permainan {
+    height: fit-content;
+    background-color: #ffa347a6;
+    padding: 4em 0.5em;
+
+    .judul > h1 {
+      text-transform: uppercase;
+      text-align: center;
+      font: 600 calc(1.5rem + 0.5vw) "Kanit", sans-serif;
+      margin: -10px 0 30px 0;
+      color: #000;
+    }
+
+    .parent-card {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 3em 2em;
+      justify-content: space-evenly;
+
+      .card {
+        width: calc(210px - 0.5vw);
+        height: 200px;
+        border-radius: 10px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.2s ease-in;
+        z-index: 50;
+
+        & img {
+          max-width: 250px;
+          height: 140px;
+          object-fit: cover;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          margin-bottom: 0;
+        }
+
+        & h3 {
+          text-align: center;
+          margin: auto;
+          padding: 0 0.4em;
+          font: 600 calc(0.7rem + 0.2vw) "Poppins", sans-serif;
+        }
+      }
+
+      .card:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        z-index: 100;
+      }
+    }
+  }
+
+  /* Article Games */
+  .games {
+    display: flex;
+    flex-flow: column wrap;
+    margin-block: 3em;
+    padding-inline: 2em;
+
+    & h1 {
+      text-align: center;
+      font: 600 calc(1.5rem + 0.5vw) "Kanit", sans-serif;
+      text-transform: uppercase;
+      margin-block-end: 1.5em;
+    }
+
+    .other-game {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 3em 1em;
+
+      .game-card {
+        flex: -1 1 calc(40% - 1rem);
+        width: 280px;
+        height: 180px;
+        border-radius: 15px;
+        background-color: #0e0d0d;
+        transition: all 0.2s ease-in;
+        z-index: 50;
+
+        & img {
+          max-width: 280px;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 15px;
+        }
+
+        & img[alt="Hay Day"] {
+          object-position: left;
+        }
+      }
+
+      .game-card:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        z-index: 100;
+      }
+    }
+  }
+  /* Akhir dari Halaman Index */
+
+  /* Halaman Index Kategori */
+  .kategori-container {
+    padding: 2em;
+
+    & h2 {
+      text-transform: uppercase;
+      text-align: center;
+      font: 600 calc(1.5rem + 0.5vw) "Kanit", sans-serif;
+      margin-bottom: 3rem;
+    }
+
+    .card-kategori {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5em;
+      justify-content: center;
+      position: relative;
+
+      .card-th {
+        flex-wrap: wrap;
+        width: 250px;
+        height: 250px;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        text-decoration: none;
+
+        .card-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+          display: flex;
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+
+          .card-title {
+            margin: auto;
+            font: 600 2rem "Kanit", sans-serif;
+            color: #fff;
+            letter-spacing: 2px;
+          }
+        }
+
+        & img {
+          max-height: 250px;
+          border-radius: 15px;
+        }
+
+        & img[alt*="12"],
+        & img[alt*="13"] {
+          object-position: 10px;
+        }
+
+        & img[alt*="14"],
+        & img[alt*="15"] {
+          object-position: top 10px left 5px;
+        }
+      }
+    }
+
+    .card-th:hover .card-overlay {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  /* Akhir dari Halaman Index Kategori */
+
+  /* Halaman Kategori TH */
+}
+
+footer {
+  background-color: #191919;
+  padding: 1em 0.5em;
+  color: #fff;
+  text-align: center;
+  font: 500 calc(1rem - 0.005vw) "Kanit", sans-serif;
+  margin-block-start: 5em;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .navigation > ul {
+      padding: 0.5em 0.5em;
+    }
+  }
+
+  main {
+    .intro {
+      flex-wrap: wrap;
+
+      & img {
+        margin-block: 0;
+        max-width: 450px;
+      }
+
+      .intro-description {
+        & h1 {
+          margin-block: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .navigation > ul {
+    flex-wrap: wrap;
+  }
+}
