@@ -1,1 +1,1 @@
-# farhanhanz.github.io
+Clash of Clans
