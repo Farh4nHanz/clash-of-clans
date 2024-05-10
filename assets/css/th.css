@@ -170,15 +170,16 @@ header {
         .hero {
           margin: 3em 0;
           display: flex;
-          gap: 20px;
-          flex-flow: row;
+          gap: 10px;
+          flex-wrap: wrap;
   
           .img {
-            flex: 1 1;
+            flex: 1 1 100px;
+            align-content: center;
   
             & img {
               width: 100%;
-              max-height: 300px;
+              max-height: 250px;
               object-fit: contain;
             }
   
